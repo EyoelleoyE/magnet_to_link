@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnet Link Converter</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+<body>
+    <h1>Magnet Link Converter</h1>
+    <form action="/convert" method="post">
+        <label for="magnet">Enter Magnet Link:</label>
+        <input type="text" id="magnet" name="magnet" required>
+        <button type="submit">Convert</button>
+    </form>
+
+    {% if normal_link %}
+        <p>Converted Link: <a href="{{ normal_link }}" target="_blank">{{ normal_link }}</a></p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
